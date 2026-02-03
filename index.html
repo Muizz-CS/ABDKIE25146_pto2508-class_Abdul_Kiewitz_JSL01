@@ -1,66 +1,79 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kanban Board</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body>
-    <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
-    <nav>
-      <div>
-        <img src="assets/favicon.svg" alt="Logo" />
-        <h4 class="sidebar-heading">ALL BOARDS (1)</h4>
-        <button class="sidebar-btn">Launch Career</button>
-      </div>
-    </nav>
-
-    <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
-    <div>
-      <header>
-        <div>
-          <h2>Launch Career</h2>
+  <body class="page">
+    <div class="layout">
+      <!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
+      <aside class="sidebar" aria-label="Board navigation">
+        <div class="sidebar_brand">
+          <img src="assets/logo-light.svg" alt="Kanban logo" class="sidebar_logo" />
         </div>
-      </header>
 
-      <div>
-        <main>
+        <div class="sidebar_boards">
+          <h4 class="sidebar_heading">ALL BOARDS (1)</h4>
+          <button class="sidebar_board" type="button">
+            <img src="assets/icon-board.svg" alt="" class="sidebar__board-icon" />
+            Launch Career
+          </button>
+        </div>
+
+        <div class="sidebar_footer">
+          <div class="sidebar_theme" role="group" aria-label="Theme selector">
+            <span class="sidebar_theme-label">Light</span>
+            <button class="sidebar_theme-toggle" type="button" aria-label="Toggle theme"></button>
+            <span class="sidebar_theme-label">Dark</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
+      <div class="board">
+        <header class="board_header">
+          <h1 class="board_title">Launch Career</h1>
+          <button class="board_add" type="button">+ Add New Task</button>
+        </header>
+
+        <main class="board_columns">
           <!-- Task Columns: Display tasks grouped by status (TODO, DOING, DONE). -->
-          <div>
-            <div>
-              <span></span>
-              <h4>TODO</h4>
+          <section class="column" aria-labelledby="todo-title">
+            <div class="column_heading">
+              <span class="column_dot column_dot-todo" aria-hidden="true"></span>
+              <h2 class="column_title" id="todo-title">TODO</h2>
             </div>
-            <!-- Tasks container for TODO -->
-            <div>
-              <div>Launch Epic Career 🚀</div>
-              <div>Learn Data Structures and Algorithms 📚</div>
+            <div class="column_tasks">
+              <article class="task">Launch Epic Career 🚀</article>
+              <article class="task">Learn Data Structures and Algorithms 📚</article>
             </div>
-          </div>
-          <!-- DOING Column -->
-          <div>
-            <div>
-              <span></span>
-              <h4>DOING</h4>
+          </section>
+
+          <section class="column" aria-labelledby="doing-title">
+            <div class="column_heading">
+              <span class="column_dot column_dot-doing" aria-hidden="true"></span>
+              <h2 class="column_title" id="doing-title">DOING</h2>
             </div>
-            <!-- Tasks container for DOING -->
-            <div>
-              <div>Master JavaScript 💛</div>
-              <div>Keep on Going 🏆</div>
+            <div class="column_tasks">
+              <article class="task">Master JavaScript 💛</article>
+              <article class="task">Keep on Going 🏆</article>
             </div>
-          </div>
-          <!-- DONE Column -->
-          <div>
-            <div>
-              <span></span>
-              <h4>DONE</h4>
+          </section>
+
+          <section class="column" aria-labelledby="done-title">
+            <div class="column_heading">
+              <span class="column_dot column_dot-done" aria-hidden="true"></span>
+              <h2 class="column_title" id="done-title">DONE</h2>
             </div>
-            <!-- Tasks container for DONE -->
-            <div>
-              <div>Contribute to Open Source Projects 🌐</div>
-              <div>Build Portfolio Projects 🛠️</div>
+            <div class="column_tasks">
+              <article class="task">Contribute to Open Source Projects 🌐</article>
+              <article class="task">Build Portfolio Projects 🛠️</article>
             </div>
-          </div>
+          </section>
         </main>
       </div>
     </div>
